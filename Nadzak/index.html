@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <title>Gostilnica Nadzak</title>
+</head>
+<body>
+
+<div id="app">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 1rem">
+        <a class="navbar-brand" href="#" style="color: #907457;">Гостилница Наџак</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Мени
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#salads">Салати</a>
+                        <a class="dropdown-item" href="#coldStarters">Ладни предјадења</a>
+                        <a class="dropdown-item" href="#hotStarters">Топли предјадења</a>
+                        <a class="dropdown-item" href="#soups">Чорби</a>
+                        <a class="dropdown-item" href="#additions">Прилози</a>
+                        <a class="dropdown-item" href="#fish">Риба</a>
+                        <a class="dropdown-item" href="#sandwiches">Сендвичи</a>
+                        <a class="dropdown-item" href="#omelette">Омлети</a>
+                        <a class="dropdown-item" href="#cookedMeals">Готвени јадења</a>
+                        <a class="dropdown-item" href="#grilledMeals">Скара</a>
+                        <a class="dropdown-item" href="#dessert">Десерти</a>
+
+                    </div>
+
+                </li>
+
+
+            </ul>
+
+        </div>
+        <i style="font-size: 12px; color: #a38562;" class="moto" > Гостилница со традиција и квалитет од 1982.</i>
+    </nav>
+    <div class="container">
+
+        <div class="row telephone">
+            <div class="col-md-12">
+                <hr>
+                <h3>Телефонски број</h3>
+                <h1>075/438-148 - 02/3128-113</h1>
+                <hr>
+            </div>
+        </div>
+
+        <br/>
+        <div class="row">
+            <div class="col-md-12 menu" id="menu">
+                <h4>Мени</h4>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="cookedMeals"> <h5><b>Готвени јадења</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="meal in cookedMeals"><i> - {{meal}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="grilledMeals"> <h5><b>Скара</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="grill in grilledMeals"><i> - {{grill}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="salads"> <h5><b>Салати</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="salad in salads"><i> - {{salad}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="coldStarters"> <h5><b>Ладни предјадења</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="starter in coldStarters"><i> - {{starter}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="hotStarters"> <h5><b>Топли предјадења</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="starter in hotStarters"><i> - {{starter}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="soups"> <h5><b>Чорби</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="soup in soups"><i> - {{soup}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="additions"> <h5><b>Прилози</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="addition in additions"><i> - {{addition}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-6 products">
+                <div class="row" id="fish"> <h5><b>Риба</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-12" v-for="f in fish"><i> - {{f}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-6 products">
+                <div class="row" id="sandwiches"> <h5><b>Сендвичи</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="sandwich in sandwiches"><i> - {{sandwich}}</i></div>
+                </div>
+            </div>
+            <div class="col-md-12 products">
+                <div class="row" id="omelette"> <h5><b>Омлети</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="o in omelette"><i> - {{o}}</i></div>
+                </div>
+            </div>
+
+            <div class="col-md-12 products">
+                <div class="row" id="dessert"> <h5><b>Десерти</b></h5><hr></div>
+                <div class="row">
+                    <div class="col-md-6" v-for="dessert in desserts"><i> - {{dessert}}</i></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row location">
+                <div class="col-md-6">
+                    <i>Адреса: <br/><b>Орце Николов бр. 105</b>
+                        <br/>
+                        <b>Центар, Скопје</b></i>
+                </div>
+                <div class="col-md-6">
+                    <i>Работно време: <br/>
+                        <b>Пон - Чет: 09:00 - 00:00</b>
+                        <br/>
+                        <b>Пет - Нед: 09:00 - 01:00</b>
+                    </i>
+                </div>
+
+            </div>
+        </div>
+        <br/>
+
+
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="script.js"></script>
+</html>
