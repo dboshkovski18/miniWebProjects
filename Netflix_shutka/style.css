@@ -1,0 +1,51 @@
+body {
+    background: radial-gradient(#e6aa51, #d71886);
+}
+
+
+.navbar{
+    position: relative;
+    top: 0px;
+    padding: 30px;
+    width: 100%;
+    background: rgba(145, 152, 229, 0.3) linear-gradient(rgba(181, 255, 255, 0.5), rgba(250, 255, 178, 0.5));
+
+}
+
+
+.navbar-logo {
+    position: relative;
+    left: 2rem;
+}
+
+.sign{
+    position: absolute;
+    top: 1.5rem;
+    right: 5rem;
+    height: 2rem;
+    width: 5rem;
+    border-radius: 30px;
+    background: red;
+    color: white;
+}
+
+.status {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    align-items: center;
+    margin: 1rem 5rem;
+    
+}
+
+    .status ul {
+        display: flex;
+        margin: 2rem;
+        padding: 0;
+    }
+
+
+
+.lost {
+    background-color: darkred;
+}

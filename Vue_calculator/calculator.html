@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculatorStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body id="body">
+
+<div id="app">
+    <div class="calculator">
+        <div class="result">
+            <transition name="fade">
+
+                <div v-show="show" class="finalResult">
+                    {{result}}
+                </div>
+
+            </transition>
+            <div class="calculation">
+                {{calculation | calculation}}
+            </div>
+
+        </div>
+        <div class="button-container">
+            <div class="button" v-for="number in numbers" @click="append(number)">
+                {{number}}
+            </div>
+            <div @click="calculate" class="button equals" >
+                =
+            </div>
+            <div class="op-buttons" >
+                <div @click="clear" class="op-button" style="background-color: black">
+                    AC
+                </div>
+                <div @click="append('+')" class="op-button">
+                    +
+                </div>
+                <div @click="append('-')" class="op-button">
+                    -
+                </div>
+                <div @click="append('/')" class="op-button">
+                    /
+                </div>
+                <div @click="append('*')" class="op-button">
+                    x
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="script.js"></script>
+</html>
+

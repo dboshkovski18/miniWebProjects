@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix шутка</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body >
+
+<div id="app">
+
+<a class="btn btn-danger" style="position: absolute; right: 5rem;top: 2rem" href="login.html" >Најави се</a>
+    <a href="netflix.html"><img style="position: absolute; top: 0rem; left: 5rem " src="img/logo_transparent.png" width="200px"></a>
+
+    <div class="container text-center" style="color: white">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="font-size: 60px; margin-top: 13rem">
+                    Неограничен број на филмови, ТВ емисии, и друго.
+                </h1>
+                <h4> Гледај било каде. Откажи се во било кое време.</h4>
+                <br />
+                <h5>Спремен си да почнеш? Внеси ја твојата е-пошта за да се регистрираш.</h5>
+                <br />
+                <div class="input-group mb-3" style="width: 50%; margin: 0 auto; height: 4rem">
+                    <input required type="text" class="form-control" placeholder="E-пошта" aria-label="Email address" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary btn-success" style="color: white;height: 4rem" type="button">Да започнеме!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h4>Предложен филм :</h4><br />
+
+                <div class="card" style="width: 18rem; background-color: #ffb467 ;margin: 0 auto">
+                    <div class="card-body">
+                        <h3 class="card-text" style="color: white">{{chosenMovieTitle}}</h3>
+                    </div>
+                    <img class="card-img-top" :src="chosenMoviePicture" alt="Card image cap">
+                </div>
+
+                <href @click="pickAnother" class="btn btn-warning" style="margin-top: 1rem;color: white">Друг предлог?</href>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="background-color: rgba(0,0,0,0.5); margin: 0 auto; margin-top:2rem; border-radius: 20px; padding:2rem">
+                <h2 style="background-color:lightslategrey;width: 100%; text-align: center; border-radius: 30px; padding: 1rem" :class="{'lost' : gameOver}">
+                    Кој е директор на филмот {{chosenMovieTitle}}?
+                </h2>
+                <br />
+                <h4 v-for="word in splitSentence">
+                    <span v-for="letter in word">
+                        <template>
+                            {{isRevealed(letter)}}
+                        </template>
+                    </span>
+                </h4>
+                <br />
+                <div class="row" >
+                    <ul class="status">
+                        <li v-for="strike in strikes">{{strike.icon}} </li>
+                    </ul>
+                </div>
+                <br />
+                <div id="button-board">
+                    <button v-for="letter in letters"
+                            @click="guessButton(letter)"
+                            :disabled="guesses.includes(letter) || gameOver || puzzleComplete"
+                            class="btn btn-secondary" style="margin: 2px">
+                        {{letter}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div style="background-color: #ffc107; width: 100%; text-align: center; border-radius: 30px; height: 2rem; font-size: 20px; margin-top: 2rem">Популарни филмови</div>
+            <div class="col-md-4" v-for="movie in movies">
+                <div class="card" style="width: 18rem; background-color: #ffb467 ;margin: 0 auto; margin-top: 2rem">
+                    <div class="card-body">
+                        <h3 class="card-text" style="color: white">{{movie.title}}</h3>
+                    </div>
+                    <img class="card-img-top" :src="movie.picture" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer style="margin-top: 2rem;">
+        <div class="footer" style="color: black; font-size: 16px;background-color: rgba(0,0,0,0.2)">
+            <div class="container" style="padding: 4rem">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <p>Прашања? Контактирајте не.</p>
+                        <ul>
+                            <li>Телефонски број: 123/456-789</li>
+                            <li>Адреса: Мирослав Крлежа 67а</li>
+                            <li>Е-пошта: netflix@shutka.com</li>
+                        </ul>
+                        <br/>
+                        <br/>
+                        <p>Netflix Shutka</p>
+                    </div>
+                    <div class="col-md-6 ">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.047656024053!2d21.42042401529749!3d41.999252779212796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1354144c2c8a471d%3A0x15105d1f584f5ffb!2sMiroslav%20Krleza%2C%20Skopje%201000!5e0!3m2!1sen!2smk!4v1642878614067!5m2!1sen!2smk" width="400px" height="200px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="script.js"></script>
+</html>

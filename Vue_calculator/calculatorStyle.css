@@ -1,0 +1,109 @@
+#body {
+    background-color: #5a21b2;
+}
+
+.calculator{
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.8);
+    position: relative;
+    top: 5rem;
+    width: 380px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #866ccf;
+    padding: 0.5rem;
+
+}
+
+.result {
+
+    padding: 30px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    background-color: #a786ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 20%;
+    width: 100%;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.finalResult {
+    font-size: 32px;
+    font-weight: bolder;
+    color: white;
+}
+
+.calculation{
+    color: black;
+}
+
+
+
+.button-container {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    margin;
+}
+
+.fade-enter-active, .fade-leave-active {
+   transition: opacity 2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.button{
+    font-size: 30px;
+    width: 106px;
+    height: 100px;
+    background-color: rgba(0,0,0,0.1);
+    margin: 2px;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.button :hover{
+    background-color: white;
+}
+
+
+
+.equals{
+
+    font-size: 30px;
+    position: absolute;
+    bottom: 2rem;
+    background-color:black;
+    right: -25px;
+    width: 180px;
+    height: 150px;
+    padding: 3rem;
+}
+
+
+
+.op-buttons{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: -1.5rem;
+    top: 3.5rem;
+
+}
+
+.op-button{
+    background-color: #cb9fbe;
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+    padding: 0.7rem;
+    cursor: pointer;
+}
